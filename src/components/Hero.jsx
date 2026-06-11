@@ -112,7 +112,7 @@ const Hero = () => {
               <div style={{ width: "24px", height: "1px", background: "rgba(255,255,255,0.35)" }} />
             </div>
 
-            <h1 className="hero-h1" style={{ fontFamily: "Russo One, sans-serif", fontSize: "clamp(38px, 5.5vw, 74px)", color: "white", lineHeight: 1.05, margin: "0 0 22px" }}>
+            <h1 className="hero-h1" style={{ fontFamily: "Russo One, sans-serif", fontSize: "clamp(38px, 5.5vw, 74px)", color: "white", lineHeight: 1.05, margin: "0 0 90px" }}>
               Oklahoma Tough,<br />Service You Trust.
             </h1>
 

@@ -49,9 +49,9 @@ const Navbar = () => {
       <div
         style={{
           position: "fixed",
-          top: scrolled ? 12 : 12,
-          left: scrolled ? 12 : 12,
-          right: scrolled ? 12 : 12,
+          top: 12,
+          left: 12,
+          right: 12,
           zIndex: 9999,
           display: "grid",
           gridTemplateColumns: "auto 1fr auto",
@@ -65,9 +65,8 @@ const Navbar = () => {
           transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
-        {/* Logo */}
         <img
-          src="/final-logo1.PNG"
+          src={import.meta.env.BASE_URL + "navlogo.PNG"}
           alt="VMS Logo"
           onClick={() => scrollTo("home")}
           style={{
@@ -79,7 +78,6 @@ const Navbar = () => {
           }}
         />
 
-        {/* Desktop nav */}
         {!isMobile && (
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div style={{
@@ -89,7 +87,6 @@ const Navbar = () => {
               fontSize: "12px",
               fontWeight: "500",
               letterSpacing: "0.06em",
-              transition: "all 0.4s ease",
             }}>
               {navItems.map(({ label, target }) => {
                 const isActive = activeSection === target;
@@ -100,13 +97,11 @@ const Navbar = () => {
                     style={{
                       cursor: "pointer",
                       transition: "color 0.3s ease",
-                      color: scrolled
-                        ? isActive ? "#3B82F6" : "rgba(255,255,255,0.85)"
-                        : isActive ? "#3B82F6" : "rgba(255,255,255,0.85)",
+                      color: isActive ? "#3B82F6" : "rgba(255,255,255,0.85)",
                       fontWeight: isActive ? "600" : "500",
                     }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = "#3B82F6"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = scrolled ? (isActive ? "#3B82F6" : "rgba(255,255,255,0.85)") : (isActive ? "#3B82F6" : "rgba(255,255,255,0.85)"); }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = isActive ? "#3B82F6" : "rgba(255,255,255,0.85)"; }}
                   >
                     {label}
                   </span>
@@ -116,7 +111,6 @@ const Navbar = () => {
           </div>
         )}
 
-        {/* Right side */}
         {!isMobile ? (
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <a
@@ -128,7 +122,6 @@ const Navbar = () => {
                 color: "rgba(255,255,255,0.8)",
                 textDecoration: "none",
                 letterSpacing: "0.05em",
-                transition: "color 0.4s ease",
               }}
             >
               (572) 276-6203
@@ -178,29 +171,38 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div style={{
-          position: "fixed", inset: 0,
-          background: "rgba(10,15,30,0.98)",
-          zIndex: 10000, padding: "40px",
-          display: "flex", flexDirection: "column",
-        }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <img src="/logo.png" alt="VMS" style={{ height: "50px" }} />
-            <button onClick={() => setMenuOpen(false)} style={{ width: 44, height: 44, borderRadius: "50%", background: "rgba(255,255,255,0.08)", border: "none", color: "white", fontSize: "20px", cursor: "pointer" }}>✕</button>
-          </div>
-          <div style={{ marginTop: "60px", display: "flex", flexDirection: "column", gap: "32px", fontFamily: "Russo One, sans-serif", fontSize: "36px" }}>
-            {navItems.map(({ label, target }) => (
-              <span key={target} onClick={() => scrollTo(target)} style={{ cursor: "pointer", color: activeSection === target ? "#3B82F6" : "white", transition: "color 0.3s ease" }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "#3B82F6"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = activeSection === target ? "#3B82F6" : "white"; }}
-              >{label}</span>
-            ))}
-          </div>
-          <a href="tel:5722766203" style={{ marginTop: "32px", fontFamily: "Montserrat, sans-serif", color: "rgba(255,255,255,0.5)", fontSize: "14px", textDecoration: "none" }}>(572) 276-6203</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)} style={{ marginTop: "auto", background: "#3B82F6", color: "white", fontFamily: "Montserrat, sans-serif", fontWeight: "700", fontSize: "14px", padding: "16px", borderRadius: "999px", textAlign: "center", textDecoration: "none" }}>Get a Quote</a>
+      <div style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(10,15,30,0.98)",
+        zIndex: 10000,
+        padding: "40px",
+        display: "flex",
+        flexDirection: "column",
+        opacity: menuOpen ? 1 : 0,
+        pointerEvents: menuOpen ? "all" : "none",
+        transition: "opacity 0.3s ease",
+      }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <img src={import.meta.env.BASE_URL + "navlogo.PNG"} alt="VMS" style={{ height: "50px" }} />
+          <button onClick={() => setMenuOpen(false)} style={{ width: 44, height: 44, borderRadius: "50%", background: "rgba(255,255,255,0.08)", border: "none", color: "white", fontSize: "20px", cursor: "pointer" }}>✕</button>
         </div>
-      )}
+        <div style={{ marginTop: "60px", display: "flex", flexDirection: "column", gap: "32px", fontFamily: "Russo One, sans-serif", fontSize: "36px" }}>
+          {navItems.map(({ label, target }) => (
+            <span
+              key={target}
+              onClick={() => scrollTo(target)}
+              style={{ cursor: "pointer", color: activeSection === target ? "#3B82F6" : "white", transition: "color 0.3s ease" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#3B82F6"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = activeSection === target ? "#3B82F6" : "white"; }}
+            >
+              {label}
+            </span>
+          ))}
+        </div>
+        <a href="tel:5722766203" style={{ marginTop: "32px", fontFamily: "Montserrat, sans-serif", color: "rgba(255,255,255,0.5)", fontSize: "14px", textDecoration: "none" }}>(572) 276-6203</a>
+        <a href="#contact" onClick={() => setMenuOpen(false)} style={{ marginTop: "auto", background: "#3B82F6", color: "white", fontFamily: "Montserrat, sans-serif", fontWeight: "700", fontSize: "14px", padding: "16px", borderRadius: "999px", textAlign: "center", textDecoration: "none" }}>Get a Quote</a>
+      </div>
     </>
   );
 };

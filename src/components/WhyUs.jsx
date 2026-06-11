@@ -4,22 +4,25 @@ const WhyUs = () => {
   const contracts = [
     {
       type: "One-Time",
+      color: "#0A0F1E",
       desc: "Need a single job done right? We offer one-time service visits for cleaning, repairs, striping, or any property need.",
       features: ["No commitment required", "Scheduling flexibility", "Full-service options available"],
     },
     {
       type: "Monthly Plan",
+      color: "#7B3F2A",
       desc: "Keep your property consistently maintained with a recurring monthly service plan customized to your needs.",
       features: ["Regular scheduled visits", "Priority availability", "Consistent property upkeep"],
-      highlight: true,
     },
     {
       type: "4 or 6-Month",
+      color: "#3B82F6",
       desc: "Short-term contracts designed for seasonal maintenance cycles or project-based property care.",
       features: ["Flexible duration", "Bundled service pricing", "Ideal for seasonal needs"],
     },
     {
       type: "Annual & Multi-Year",
+      color: "#1B3A6B",
       desc: "Our most comprehensive option — long-term agreements with the best value and dedicated service scheduling.",
       features: ["Best pricing available", "Dedicated account management", "Multi-property discounts"],
     },
@@ -80,7 +83,7 @@ const WhyUs = () => {
               <img src={tools} alt="Tools" style={{ position: "relative", zIndex: 1, width: "100%", height: 380, objectFit: "contain", display: "block", filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.12))" }} />
             </div>
 
-            {/* Right — single unified description leading into contracts */}
+            {/* Right */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
                 <div style={{ width: "24px", height: "1px", background: "#3B82F6" }} />
@@ -98,37 +101,29 @@ const WhyUs = () => {
             </div>
           </div>
 
-          {/* Contract cards — the proof */}
+          {/* Contract cards */}
           <div className="contracts-grid">
             {contracts.map((c) => (
               <div
                 key={c.type}
                 className="contract-card"
-                style={{
-                  background: c.highlight ? "#3B82F6" : "#0A0F1E",
-                  border: c.highlight ? "none" : "1px solid rgba(255,255,255,0.06)",
-                }}
+                style={{ background: c.color, border: "none" }}
               >
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <h3 style={{ fontFamily: "Russo One, sans-serif", color: "white", fontSize: "15px", margin: 0 }}>{c.type}</h3>
-                  {c.highlight && (
-                    <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "8px", fontWeight: 700, letterSpacing: "0.12em", color: "#0A0F1E", background: "white", padding: "3px 8px", borderRadius: "999px", textTransform: "uppercase" }}>Popular</span>
-                  )}
-                </div>
+                <h3 style={{ fontFamily: "Russo One, sans-serif", color: "white", fontSize: "15px", margin: 0 }}>{c.type}</h3>
 
-                <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "11px", color: c.highlight ? "rgba(255,255,255,0.8)" : "rgba(255,255,255,0.45)", lineHeight: 1.8, margin: 0 }}>{c.desc}</p>
+                <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.7)", lineHeight: 1.8, margin: 0 }}>{c.desc}</p>
 
-                <div style={{ height: "1px", background: c.highlight ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.07)" }} />
+                <div style={{ height: "1px", background: "rgba(255,255,255,0.15)" }} />
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                   {c.features.map((f) => (
                     <div key={f} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                      <span style={{ width: 15, height: 15, borderRadius: "50%", background: c.highlight ? "rgba(255,255,255,0.2)" : "rgba(59,130,246,0.25)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <span style={{ width: 15, height: 15, borderRadius: "50%", background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                         <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
                           <path d="M1 3.5 L2.8 5.5 L6 1.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </span>
-                      <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "11px", color: c.highlight ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.45)" }}>{f}</span>
+                      <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.7)" }}>{f}</span>
                     </div>
                   ))}
                 </div>
@@ -140,7 +135,7 @@ const WhyUs = () => {
                   onMouseLeave={(e) => { e.currentTarget.style.gap = "8px"; }}
                 >
                   Get a Quote
-                  <span style={{ width: 24, height: 24, borderRadius: "50%", background: c.highlight ? "rgba(255,255,255,0.2)" : "rgba(59,130,246,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <span style={{ width: 24, height: 24, borderRadius: "50%", background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
                       <line x1="1.5" y1="4.5" x2="7.5" y2="4.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
                       <path d="M5 2 L7.5 4.5 L5 7" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
