@@ -116,9 +116,9 @@ const Hero = () => {
               Oklahoma Tough,<br />Service You Trust.
             </h1>
 
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "15px", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, margin: "0 auto", maxWidth: 560 }}>
+            {/* <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "15px", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, margin: "0 auto", maxWidth: 560 }}> 
               Professional maintenance, housekeeping, and property care for residential and commercial clients across Oklahoma.
-            </p>
+            </p> */}
           </div>
         </div>
 
