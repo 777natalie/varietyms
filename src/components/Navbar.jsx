@@ -40,7 +40,6 @@ const Navbar = () => {
     { label: "Home", target: "home" },
     { label: "Services", target: "services" },
     { label: "About", target: "about" },
-    { label: "Service Area", target: "service-area" },
     { label: "Contact", target: "contact" },
   ];
 
