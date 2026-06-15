@@ -3,7 +3,6 @@ const Footer = () => {
     { label: "Home", target: "home" },
     { label: "Services", target: "services" },
     { label: "About", target: "about" },
-    { label: "Service Area", target: "service-area" },
     { label: "Contact", target: "contact" },
   ];
 
@@ -115,16 +114,16 @@ const Footer = () => {
             <p className="footer-heading">Get In Touch</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               <div>
-                <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "10px", color: "#3B82F6", fontWeight: 700, letterSpacing: "0.1em", margin: "0 0 4px", textTransform: "uppercase" }}>Phone</p>
+                <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "10px", color: "#3B82F6", fontWeight: 700, letterSpacing: "0.1em", margin: "0 0 4px", textTransform: "uppercase" }}>Office</p>
                 <a href="tel:5722766203" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.7)", textDecoration: "none", fontWeight: 600 }}>(572) 276-6203</a>
+              </div>
+              <div>
+                <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "10px", color: "#3B82F6", fontWeight: 700, letterSpacing: "0.1em", margin: "0 0 4px", textTransform: "uppercase" }}>After Hours</p>
+                <a href="tel:4055378449" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.7)", textDecoration: "none", fontWeight: 600 }}>(405) 537-8449</a>
               </div>
               <div>
                 <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "10px", color: "#3B82F6", fontWeight: 700, letterSpacing: "0.1em", margin: "0 0 4px", textTransform: "uppercase" }}>Service Area</p>
                 <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.45)", margin: 0, lineHeight: 1.7 }}>OKC Metro · Yukon<br />& Surrounding Areas</p>
-              </div>
-              <div>
-                <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "10px", color: "#3B82F6", fontWeight: 700, letterSpacing: "0.1em", margin: "0 0 4px", textTransform: "uppercase" }}>Contracts</p>
-                <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.45)", margin: 0, lineHeight: 1.7 }}>One-Time · Monthly<br />4/6-Month · Annual</p>
               </div>
             </div>
           </div>

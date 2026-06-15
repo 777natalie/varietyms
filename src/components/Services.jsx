@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logoFull from "../assets/logo-full.png";
 import moveIn from "../assets/move-in.png";
 import parkingStripes from "../assets/parking-stripes.png";
@@ -11,6 +12,7 @@ const Services = () => {
       title: "Commercial Maintenance",
       desc: "Parking lot striping, curb painting, pressure washing, building repairs, plumbing upkeep, floor preparation, and complete commercial property care.",
       bg: "#0D1526",
+      slug: "commercial",
     },
     {
       image: moveIn,
@@ -18,6 +20,7 @@ const Services = () => {
       title: "Residential Housekeeping",
       desc: "Routine cleaning, deep cleans, move-in/move-out, lawn maintenance, minor home repairs, and pressure washing for residential properties.",
       bg: "#7B3F2A",
+      slug: "residential",
     },
     {
       image: yard,
@@ -25,6 +28,7 @@ const Services = () => {
       title: "Exterior & Grounds",
       desc: "Landscaping, grounds maintenance, property cleanup, trash removal, and full exterior services keeping your property clean and attractive.",
       bg: "#3B82F6",
+      slug: "exterior",
     },
   ];
 
@@ -98,8 +102,8 @@ const Services = () => {
             <h2 style={{ fontFamily: "Russo One, sans-serif", fontSize: "clamp(28px, 3.5vw, 52px)", color: "white", lineHeight: 1.1, margin: 0, maxWidth: 520 }}>
               A Complete Set Of<br />Property Services
             </h2>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.45)", lineHeight: 1.8, margin: 0, maxWidth: 380 }}>
-              From residential housekeeping to full commercial property maintenance — one company for all your property needs.
+            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "16px", color: "rgba(255,255,255,0.85)", fontWeight: 600, lineHeight: 1.7, margin: 0, maxWidth: 400 }}>
+              From <span style={{ color: "#3B82F6" }}>residential housekeeping</span> to <span style={{ color: "#3B82F6" }}>full commercial property maintenance</span> — one company for all your property needs.
             </p>
           </div>
 
@@ -115,8 +119,8 @@ const Services = () => {
                   <h3 style={{ fontFamily: "Russo One, sans-serif", color: "white", fontSize: "19px", margin: 0, lineHeight: 1.3 }}>{s.title}</h3>
                   <p style={{ fontFamily: "Montserrat, sans-serif", color: "rgba(255,255,255,0.55)", fontSize: "12px", lineHeight: 1.85, margin: 0 }}>{s.desc}</p>
                   <div style={{ height: "1px", background: "rgba(255,255,255,0.12)", margin: "4px 0" }} />
-                  <a
-                    href="#contact"
+                  <Link
+                    to={`/services/${s.slug}`}
                     style={{ display: "inline-flex", alignItems: "center", gap: "10px", fontFamily: "Montserrat, sans-serif", fontWeight: 700, fontSize: "11px", color: "white", textDecoration: "none", letterSpacing: "0.08em", textTransform: "uppercase", transition: "gap 0.2s ease" }}
                     onMouseEnter={(e) => { e.currentTarget.style.gap = "16px"; }}
                     onMouseLeave={(e) => { e.currentTarget.style.gap = "10px"; }}
@@ -128,7 +132,7 @@ const Services = () => {
                         <path d="M7 3 L10 6 L7 9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

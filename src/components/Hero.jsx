@@ -129,6 +129,10 @@ const Hero = () => {
           </p>
           <a
             href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+                }}
             style={{ display: "flex", alignItems: "center", gap: "12px", background: "white", color: "#0A0F1E", fontFamily: "Montserrat, sans-serif", fontWeight: 700, fontSize: "11px", padding: "12px 16px 12px 24px", borderRadius: "999px", textDecoration: "none", letterSpacing: "0.08em", textTransform: "uppercase", whiteSpace: "nowrap", transition: "transform 0.2s ease", flexShrink: 0 }}
             onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
