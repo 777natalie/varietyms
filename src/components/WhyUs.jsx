@@ -130,6 +130,10 @@ const WhyUs = () => {
 
                 <a
                   href="#contact"
+                    onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                        }}  
                   style={{ display: "inline-flex", alignItems: "center", gap: "8px", fontFamily: "Montserrat, sans-serif", fontWeight: 700, fontSize: "10px", color: "white", textDecoration: "none", letterSpacing: "0.08em", textTransform: "uppercase", marginTop: "auto", paddingTop: "6px", transition: "gap 0.2s ease" }}
                   onMouseEnter={(e) => { e.currentTarget.style.gap = "14px"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.gap = "8px"; }}
