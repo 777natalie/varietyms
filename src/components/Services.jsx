@@ -18,7 +18,7 @@ const Services = () => {
       image: moveIn,
       imgHeight: 180,
       title: "Residential Housekeeping",
-      desc: "Routine cleaning, deep cleans, move-in/move-out, lawn maintenance, minor home repairs, and pressure washing for residential properties.",
+      desc: "Routine cleaning, deep cleans, lawn maintenance, minor home repairs, and pressure washing for residential properties.",
       bg: "#7B3F2A",
       slug: "residential",
     },

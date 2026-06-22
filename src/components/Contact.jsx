@@ -17,7 +17,6 @@ const serviceOptions = {
   "Residential Housekeeping": [
     "Routine Home Cleaning",
     "Deep Cleaning Services",
-    "Move-In & Move-Out Cleaning",
     "Lawn & Landscape Maintenance",
     "Minor Home Repairs & Maintenance",
     "Pressure Washing",

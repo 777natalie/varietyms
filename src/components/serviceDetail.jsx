@@ -34,7 +34,6 @@ const serviceData = {
       "Residential Housekeeping",
       "Deep Cleaning Services",
       "Routine Home Cleaning",
-      "Move-In & Move-Out Cleaning",
       "Property Cleanup",
       "Lawn & Landscape Maintenance",
       "Minor Home Repairs & Maintenance",
